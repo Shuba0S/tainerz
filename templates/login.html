@@ -1,20 +1,28 @@
 {% extends 'layout.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<div class="login-form" id="login-form" {% if not show-login %}style="display:none"{% endif %}>
-    <h1>Login</h1>
-    <form action="/login" method="POST">
-        <label>Username:</label>
-        <input type="text" name="username" required/><br />
-        <label>Password:</label>
-        <input type="password" name="password" required/>
-        <button type="submit">Login</button>
+<link rel="stylesheet"herf="static/stylesheet.css">
+<div class="container">
+  <!-- Left Panel (Sign In) -->
+  <div class="left-panel">
+    <h2>Welcome Back!</h2>
+    <p>Enter your personal details to use all of our site features</p>
+    <button class="sign-in-btn" onclick="toggleForm('sign-in')">Sign In</button>
+  </div>
+
+  <!-- Right Panel (Sign Up) -->
+  <div class="right-panel">
+    <h2>Create Account</h2>
+    <span> use your email for registration</span>
+    <form id="auth-form">
+      <!-- Initially, show fields for Sign Up -->
+      <input type="text" id="name" placeholder="Name" class="form-input" style="display: none;">
+      <input type="text" id="username" placeholder="Username" class="form-input">
+      <input type="password" id="password" placeholder="Password" class="form-input">
+      <input type="password" id="confirm-password" placeholder="Confirm Password" class="form-input" style="display: none;">
+      <button class="sign-up-btn" id="submit-btn" onclick="submitForm(event)">Sign Up</button>
     </form>
-</div>
-<div class="signup-form" id="signup-form" {% if show-login %}style="display:none"{% endif %}>
-    <h1>SignUp</h1>
-    <form action="/signup" method="POST">
-        <input type="text" name="username"  />
-    </form>
+    <button class="toggle-btn" onclick="toggleForm('login')">Already have an account? Sign In</button>
+  </div>
 </div>
 {% endblock %}
