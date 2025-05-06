@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (type === 'sign-in') 
             {
           // Show the Sign In form (username and password only)
-          nameField.style.display = 'none';
           emailField.style.display = 'none';
           confirmPasswordField.style.display = 'none';
           usernameField.style.display = 'block';
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
           toggleButton.textContent = 'Don\'t have an account? Sign Up';
         } else {
           // Show the Sign Up form (name, email, password, confirm password)
-          nameField.style.display = 'block';
           emailField.style.display = 'block';
           confirmPasswordField.style.display = 'block';
           usernameField.style.display = 'block';
