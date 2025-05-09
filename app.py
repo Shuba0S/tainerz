@@ -1,7 +1,7 @@
 from flask import Flask, render_template
-import mysql.connector
+import mysql.connector # type: ignore
 from config import Config
-import docker
+import docker # type: ignore
 import datetime
 
 # Create a Flask application instance
