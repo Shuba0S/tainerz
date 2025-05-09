@@ -2,28 +2,29 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 <link rel="stylesheet"herf="static/stylesheet.css">
-<div class="container">
-  <!-- Left Panel (Sign In) -->
+<div class="container" id="container">
+  <!-- Left Panel -->
   <div class="left-panel">
-    <h2>Welcome Back!</h2>
-    <p>Enter your personal details to use all of our site features</p>
-    <button class="sign-in-btn" onclick="toggleForm('sign-in')">Sign In</button>
+    <h2 id="left-heading">Welcome Back!</h2>
+    <p id="left-text">Enter your personal details to use all of our site features</p>
+    <button class="sign-in-btn" id="left-toggle-btn" onclick="toggleForm('sign-up')">Sign Up</button>
   </div>
 
-  <!-- Right Panel (Sign Up) -->
+  <!-- Right Panel -->
   <div class="right-panel">
     <h2>Create Account</h2>
-    <span> use your email for registration</span>
+    <span>Use your email for registration</span>
     <form id="auth-form">
-      <!-- Initially, show fields for Sign Up -->
-      
-      <input type="text" id="username" placeholder="Username" class="form-input">
-      <input type="password" id="password" placeholder="Password" class="form-input">
-      <input type="password" id="confirm-password" placeholder="Confirm Password" class="form-input" style="display: none;">
-      <button class="sign-up-btn" id="submit-btn" onclick="submitForm(event)">Sign Up</button>
+      <input type="email" id="email" placeholder="Email" class="form-input" />
+      <input type="text" id="username" placeholder="Username" class="form-input" />
+      <input type="password" id="password" placeholder="Password" class="form-input" />
+      <input type="password" id="confirm-password" placeholder="Confirm Password" class="form-input" />
+      <button type="submit" id="submit-btn">Sign Up</button>
     </form>
-    <button class="toggle-btn" onclick="toggleForm('login')">Already have an account? Sign In</button>
+    <button class="toggle-btn">Already have an account? Sign In</button>
   </div>
+</div>
+
 </div>
 
 {% endblock %}
