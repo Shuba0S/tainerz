@@ -3,9 +3,9 @@
 {% block title %}Home - Tainerz{% endblock %}
 
 {% block content %}
-
-    <link rel="stylesheet" href="style.css">
-
+<h1>Welcome to Tainerz</h1>
+<link rel="stylesheet" href="homepage.css">
+</head>
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -19,7 +19,7 @@
                 <ul>
                     <li><a href="#" class="active" data-target="containers">Containers</a></li>
                     <li><a href="#" data-target="images">Images</a></li>
-                    <li><a href="#" data-target="stats">Stats</a></li>
+            
                 </ul>
             </div>
 
@@ -30,9 +30,7 @@
                         <h2>Containers</h2>
                         <button class="btn btn-primary" id="refresh-containers">Refresh</button>
                     </div>
-                    <div class="actions-bar">
-                        <button class="btn btn-primary" id="create-container">Create Container</button>
-                    </div>
+                    
                     <table>
                         <thead>
                             <tr>
@@ -76,102 +74,16 @@
                     </table>
                 </div>
 
-                <!-- Stats Panel -->
-                <div class="panel" id="stats-panel">
-                    <div class="page-title">
-                        <h2>System Stats</h2>
-                        <button class="btn btn-primary" id="refresh-stats">Refresh</button>
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <h3>Containers</h3>
-                            <div class="stat-value" id="containers-count">0</div>
-                            <div class="stat-details">
-                                <div><span class="label">Running:</span> <span id="running-containers">0</span></div>
-                                <div><span class="label">Stopped:</span> <span id="stopped-containers">0</span></div>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Images</h3>
-                            <div class="stat-value" id="images-count">0</div>
-                        </div>
-                        <div class="stat-card">
-                            <h3>CPU Usage</h3>
-                            <div class="stat-value" id="cpu-usage">0%</div>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Memory Usage</h3>
-                            <div class="stat-value" id="memory-usage">0 GB</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+               
         </div>
     </div>
+    <p>Click below to view Docker Images:</p>
+<a href="{{ url_for('list_docker_images') }}">
+    <button>View Docker Images</button>
 
-    <!-- Modal for container creation -->
-    <div class="modal" id="create-container-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Create Container</h3>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="create-container-form">
-                    <div class="form-group">
-                        <label for="container-name">Container Name</label>
-                        <input type="text" id="container-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="container-image">Image</label>
-                        <select id="container-image" required>
-                            <!-- Images will be loaded here -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="container-ports">Ports (host:container)</label>
-                        <input type="text" id="container-ports" placeholder="8080:80">
-                    </div>
-                    <div class="form-group">
-                        <label for="container-env">Environment Variables</label>
-                        <textarea id="container-env" placeholder="KEY=value&#10;ANOTHER_KEY=value"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="container-volumes">Volumes (host:container)</label>
-                        <input type="text" id="container-volumes" placeholder="/host/path:/container/path">
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Create</button>
-                        <button type="button" class="btn btn-danger cancel-modal">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <script src="home.js"></script>
 
-    <!-- Modal for pulling an image -->
-    <div class="modal" id="pull-image-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Pull Image</h3>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="pull-image-form">
-                    <div class="form-group">
-                        <label for="image-name">Image Name</label>
-                        
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Pull</button>
-                        <button type="button" class="btn btn-danger cancel-modal">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
-</body>
+
 <a href="{{ url_for('login') }}">Logout</a>
 {% endblock %}

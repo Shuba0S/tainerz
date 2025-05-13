@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Home - Tainerz{% endblock %}
+
+{% block content %}
+<h2>Docker Containers</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Container ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for container in containers %}
+        <tr>
+            <td>{{ container.id }}</td>
+            <td>{{ container.name }}</td>
+            <td>{{ container.status }}</td>
+            <td>
+                <a href="{{ url_for('start_container', container_id=container.name) }}">
+                    <button style="margin-right: 10px;">Start</button>
+                </a>
+                <a href="{{ url_for('stop_container', container_id=container.name) }}">
+                    <button>Stop</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
