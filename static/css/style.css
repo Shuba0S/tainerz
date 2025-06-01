@@ -168,7 +168,6 @@ form input {
 
 
 
-/* New layout fixes */
 .layout-body {
   background: #f5f7fa;
   min-height: 100vh;
@@ -185,8 +184,8 @@ form input {
 .layout-main {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 40px;
 }
 
@@ -197,7 +196,6 @@ form input {
   font-weight: 500;
 }
 
-/* Flip card section */
 .tainerz-section {
   display: flex;
   gap: 30px;
@@ -240,3 +238,10 @@ form input {
   background: linear-gradient(to right, #00c9ff, #92fe9d);
   color: white;
 }
+
+.tainerz-card-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  color: #333;
+}
+
