@@ -2,21 +2,26 @@
     <div class="tainerz-card">
         <div class="tainerz-card-face tainerz-card-front">
             <h2>Docker Images</h2>
-            <p>Click to view details</p>
         </div>
         <div class="tainerz-card-face tainerz-card-back">
-            <h2>Images</h2>
-            <ul>
-                {% for image in docker_images %}
-                    <li>
-                        ID: {{ image.image_id }}<br>
-                        Tag: {{ image.tag }}<br>
-                        Size: {{ image.size }}
-                    </li>
-                {% else %}
-                    <li>No images found</li>
-                {% endfor %}
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image ID</th>
+                        <th>Tags</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for image in images %}
+                    <tr>
+                        <td>{{ image.id }}</td>
+                        <td>{{ image.tags | join(', ') }}</td>
+                        <td>{{ image.size }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

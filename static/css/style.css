@@ -216,9 +216,9 @@ form input {
   position: relative;
 }
 
-.tainerz-card:hover {
+/*.tainerz-card:hover {
   transform: rotateY(180deg);
-}
+}*/
 
 .tainerz-card-face {
   position: absolute;
@@ -239,9 +239,9 @@ form input {
   color: white;
 }
 
-.tainerz-card-back {
+/*.tainerz-card-back {
   background: #ffffff;
   transform: rotateY(180deg);
   color: #333;
-}
+}*/
 

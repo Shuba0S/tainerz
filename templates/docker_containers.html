@@ -2,23 +2,35 @@
   <div class="tainerz-card">
     <div class="tainerz-card-face tainerz-card-front">
       <h2>Docker Containers</h2>
-      <p>Click to view details</p>
     </div>
     <div class="tainerz-card-face tainerz-card-back">
-      <h3>Containers</h3>
-      <ul>
-        {% for container in docker_containers %}
-          <li>Name: {{ container.name }}<br>Status: {{ container.status }}<br>Action: {{ container.action }}</li>
-           <form action="{{ url_for('stop_container', container_id=container.container_id) }}" method="post" style="display:inline;">
-                            <button type="submit">Stop</button>
-                        </form>
-                        <form action="{{ url_for('remove_container', container_id=container.container_id) }}" method="post" style="display:inline;">
-                            <button type="submit">Remove</button>
-                        </form>
-        {% else %}
-          <li>No containers running</li>
-        {% endfor %}
-      </ul>
+      <table>
+          <thead>
+              <tr>
+                  <th>Container ID</th>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for container in containers %}
+              <tr>
+                  <td>{{ container.id }}</td>
+                  <td>{{ container.name }}</td>
+                  <td>{{ container.status }}</td>
+                  <td>
+                      <a href="{{ url_for('start_container', container_id=container.name) }}">
+                          <button style="margin-right: 10px;">Start</button>
+                      </a>
+                      <a href="{{ url_for('stop_container', container_id=container.name) }}">
+                          <button>Stop</button>
+                      </a>
+                  </td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
     </div>
   </div>
 </div>
