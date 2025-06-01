@@ -180,5 +180,3 @@ document.addEventListener('DOMContentLoaded', function () {
     isSignIn = formType === 'sign-in';
     toggleForm(formType);
 });
-
-

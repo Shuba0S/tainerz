@@ -240,20 +240,3 @@ form input {
   background: linear-gradient(to right, #00c9ff, #92fe9d);
   color: white;
 }
-
-.tainerz-card-back {
-  background: #ffffff;
-  transform: rotateY(180deg);
-  color: #333;
-}
-
-
-
-
-
-
-
-
-
-
-
