@@ -2,21 +2,26 @@
 <html>
 <head>
     <title>{% block title %}Tainerz the docker manager{% endblock %}</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body class="layout-body">
     <script src="/static/js/script.js"></script>
-    <header>
+    
+    <header class="layout-header">
         <h1>Tainerz</h1>
-        <a href="{{ url_for('home') }}">Back to Home</a> <a href="{{ url_for('login') }}">Logout</a>
+        <nav>
+            
+            <a href="{{ url_for('login') }}">Logout</a>
+        </nav>
     </header>
-        <main class="main-content">
-            {% block content %}
-            {% endblock %}
-        </main>
-    <footer>
+
+    <main class="layout-main">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="layout-footer">
         <p>Developed by Shuba S and Designed by Sanjana M</p>
     </footer>
 </body>
-
 </html>

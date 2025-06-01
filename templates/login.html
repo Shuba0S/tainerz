@@ -1,30 +1,28 @@
-{% extends 'layout.html' %}
-{% block title %}Home{% endblock %}
-{% block content %}
-<link rel="stylesheet"herf="static/stylesheet.css">
-<div class="container" id="container">
-  <!-- Left Panel -->
-  <div class="left-panel">
-    <h2 id="left-heading">Welcome Back!</h2>
-    <p id="left-text">Enter your personal details to use all of our site features</p>
-    <button class="sign-in-btn" id="left-toggle-btn" onclick="toggleForm('sign-up')">Sign Up</button>
-  </div>
+{% extends 'layout.html' %} 
+{% block title %}Home{% endblock %} 
+{% block content %} 
+<link rel="stylesheet" href="/static/css/style.css">  
 
-  <!-- Right Panel -->
-  <div class="right-panel">
-    <h2>Create Account</h2>
-    <span>Use your email for registration</span>
-    <form id="auth-form">
-      <input type="email" id="email" placeholder="Email" class="form-input" />
-      <input type="text" id="username" placeholder="Username" class="form-input" />
-      <input type="password" id="password" placeholder="Password" class="form-input" />
-      <input type="password" id="confirm-password" placeholder="Confirm Password" class="form-input" />
-      <button type="submit" id="submit-btn">Sign Up</button>
-    </form>
-    <button class="toggle-btn">Already have an account? Sign In</button>
-  </div>
-</div>
+<div class="container" id="container">   
+  <!-- Left Panel -->   
+  <div class="left-panel">     
+    <h2 id="left-heading">Welcome Back!</h2>     
+    <p id="left-text">Enter your personal details to use all of our site features</p>     
+    <button class="sign-in-btn" id="left-toggle-btn" onclick="toggleForm('sign-up')">Sign Up</button>   
+  </div>    
 
-
-
+  <!-- Right Panel -->   
+  <div class="right-panel">     
+    <h2 id="form-title">Create Account</h2>     
+    <span>Use your email for registration</span>     
+    <form id="auth-form">       
+      <input type="email" id="email" name="email" placeholder="Email" class="form-input" />       
+      <input type="text" id="username" name="username" placeholder="Username" class="form-input" />       
+      <input type="password" id="password" name="password" placeholder="Password" class="form-input" />       
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" class="form-input" />       
+      <button type="submit" id="submit-btn">Sign Up</button>     
+    </form>     
+    <button class="toggle-btn">Already have an account? Sign In</button>   
+  </div> 
+</div>    
 {% endblock %}

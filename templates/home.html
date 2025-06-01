@@ -1,23 +1,8 @@
 {% extends "layout.html" %}
-
-{% block title %}Home - Tainerz{% endblock %}
-
+{% block title %}Tainerz Home{% endblock %}
 {% block content %}
-<h1>Welcome to Tainerz</h1>
-
-<p>Click below to view Docker Images:</p>
-<a href="{{ url_for('list_docker_images') }}">
-    <button>View Docker Images</button>
-</a>
-
-<br>
-
-<p>Click below to view Docker Containers:</p>
-<a href="{{ url_for('list_docker_containers') }}">
-    <button>View Docker Containers</button>
-</a>
-
-<br>
-<br>
-
+<div class="tainerz-section">
+    {% include 'docker_images.html' %}
+    {% include 'docker_containers.html' %}
+</div>
 {% endblock %}
