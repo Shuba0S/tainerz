@@ -140,7 +140,108 @@ form input {
   text-decoration: underline;
 }
 
-/* Hidden Class for Toggle Logic */
-.hidden {
-  display: none !important;
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.layout-body {
+  background: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+.layout-header, .layout-footer {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.layout-header nav a {
+  margin: 0 10px;
+  color: #5c6bc0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.tainerz-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tainerz-card-wrapper {
+  perspective: 1000px;
+}
+
+.tainerz-card {
+  width: 380px;
+  height: 280px;
+  border-radius: 25px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.tainerz-card:hover {
+  transform: rotateY(180deg);
+}
+
+.tainerz-card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.tainerz-card-front {
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  color: white;
+}
+
+.tainerz-card-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  color: #333;
+}
+
