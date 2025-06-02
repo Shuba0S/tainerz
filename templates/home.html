@@ -3,8 +3,21 @@
 
 {% block content %}
 <div class="tainerz-section">
-    {% include 'docker_images.html' %}
-    {% include 'docker_containers.html' %}
+    <div class="card-container">
+  <a href="/docker_images" class="card-link">
+    <div class="tainerz-card">
+      <div class="card-title">Docker Images</div>
+      <div class="card-subtitle">Click to view details</div>
+    </div>
+  </a>
+
+  <a href="/docker_containers" class="card-link">
+    <div class="tainerz-card">
+      <div class="card-title">Docker Containers</div>
+      <div class="card-subtitle">Click to view details</div>
+    </div>
+  </a>
+</div>
 </div>
 {% endblock %}
 
