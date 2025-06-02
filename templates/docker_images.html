@@ -1,10 +1,15 @@
- <div class="tainerz-card-wrapper">
-    <div class="tainerz-card">
-        <div class="tainerz-card-face tainerz-card-front">
+{% extends "layout.html" %}
+{% block title %}Docker Images{% endblock %}
+
+{% block content %}
+
+<div class="docker-container-card-wrapper">
+    <div class="docker-container-card">
+        <div class="docker-container-card-front">
             <h2>Docker Images</h2>
         </div>
-        <div class="tainerz-card-face tainerz-card-back">
-            <table>
+        <div class="docker-container-card-back">
+            <table class="docker-container-table">
                 <thead>
                     <tr>
                         <th>Image ID</th>
@@ -25,4 +30,4 @@
         </div>
     </div>
 </div>
- 
+{% endblock %}
