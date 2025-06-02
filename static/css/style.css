@@ -349,11 +349,11 @@ form input {
 .docker-container-table td {
   padding: 15px 20px;
   text-align: left;
-  color: white;
+  color: black;
 }
 
 .docker-container-table tbody tr {
-  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  background: linear-gradient(135deg, #ffff);
   border-radius: 12px;
   margin: 8px 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -365,7 +365,7 @@ form input {
 }
 
 .docker-container-button {
-  padding: 8px 14px;
+  padding: 8px 30px;
   background-color: #0077cc;
   border: none;
   border-radius: 6px;
@@ -382,6 +382,7 @@ form input {
 
 .docker-container-stop-button {
   background-color: #cc0033;
+  padding: 8px 30px;
 }
 
 .docker-container-stop-button:hover {
