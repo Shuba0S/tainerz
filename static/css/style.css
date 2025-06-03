@@ -388,3 +388,8 @@ form input {
 .docker-container-stop-button:hover {
   background-color: #99002a;
 }
+.h1 {
+  color: #00c6ff;
+  justify-content: center;
+
+}
